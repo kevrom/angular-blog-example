@@ -50,7 +50,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
 				},
 				resolve: {
 					blog: ['BlogSrv', '$stateParams', function(BlogSrv, $stateParams) {
-						return BlogSrv.one($stateParams.id);
+						return BlogSrv.one($stateParams.id).get();
 					}]
 				}
 			})
