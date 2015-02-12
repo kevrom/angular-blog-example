@@ -10,8 +10,11 @@ Backend
 - RethinkDB
 
 Install RethinkDB
+
 Navigate to the control panel. It should be at `localhost:8080` with default options.
+
 Create a database named `blogtest`
+
 Create a table in that database called `blogs`
 
 Install gulp globally, `npm install -g gulp`
