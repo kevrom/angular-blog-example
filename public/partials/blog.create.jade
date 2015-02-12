@@ -1,0 +1,6 @@
+div Blog create jade
+
+form(ng-submit='save(blog)')
+	input(type='text', name='blogName', ng-model='blog.name', placeholder='Post title')
+	textarea(name='blogContent', ng-model='blog.content', placeholder='Content')
+	button(type='submit') Save Post

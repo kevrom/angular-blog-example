@@ -1,0 +1,7 @@
+div Blog jade
+
+a(ui-sref='blog.create') New Blog Post
+
+ul
+	li(ng-repeat='blog in blogs')
+		a(ui-sref='blog.view({id:blog.id})') {{ blog.name }}
