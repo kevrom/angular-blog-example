@@ -76,7 +76,7 @@ app.controller('BlogCtrl', ['blog', 'blogs', '$scope', '$state',
 
 		$scope.save = function(blog) {
 			blog.save().then(function(res) {
-				$state.go('blog.view', { id:'+ res.id +'});
+				$state.go('blog.view', { id: res.id });
 			});
 		};
 	}
