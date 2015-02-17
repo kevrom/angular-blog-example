@@ -1,11 +1,10 @@
 'use strict';
-/* global angular */
 
-require('angular/angular');
-require('restangular');
+var angular = require('angular');
 
-var app = angular.module('blogtest', [require('angular-ui-router'), 'restangular']);
+var app = angular.module('blogtest', ['ui.router', 'restangular']);
 
+// Configuration and states
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider',
 	function ($stateProvider, $urlRouterProvider, $locationProvider, $RestangularProvider) {
 		console.log('this is running');
@@ -65,10 +64,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
 			});
 }]);
 
+// Blog Service using Restangular
 app.factory('BlogSrv', ['Restangular', function(Restangular) {
 	return Restangular.service('blogs');
 }]);
 
+// Blog controller
 app.controller('BlogCtrl', ['blog', 'blogs', '$scope', '$state',
 	function(blog, blogs, $scope, $state) {
 		$scope.blog = blog;
@@ -81,4 +82,3 @@ app.controller('BlogCtrl', ['blog', 'blogs', '$scope', '$state',
 		};
 	}
 ]);
-

@@ -34,6 +34,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^8.1.1",
+    "browserify-shim": "^3.8.2",
     "del": "^1.1.1",
     "gulp": "^3.8.10",
     "gulp-if": "^1.2.5",
@@ -49,6 +50,16 @@
     "jshint-stylish": "^1.0.0",
     "merge-stream": "^0.1.7",
     "run-sequence": "^1.0.2",
+    "vinyl-source-stream": "^1.0.0",
     "vinyl-transform": "^1.0.0"
+  },
+  "browserify": {
+    "transform": [
+	  "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+	"lodash": "global:_",
+	"angular": "global:angular"
   }
 }

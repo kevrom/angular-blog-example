@@ -13,6 +13,7 @@ var routes = require('./server/routes');
 
 app.use(bodyParser());
 
+// Add template render function to context
 app.use(function *(next) {
 	var render = views('./server/views', {
 		default: 'jade'
@@ -21,7 +22,10 @@ app.use(function *(next) {
 	yield next;
 });
 
-app.use(serve(path.join(__dirname, '/dist')));
+app.use(serve(path.join(__dirname, 'dist')));
+if (app.env === 'development') {
+	app.use(serve('.'));
+}
 app.use(routes.middleware());
 
 var port = 3001;
